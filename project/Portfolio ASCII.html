@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reeti Gandhi · Product Designer · ASCII Edition</title>
+<meta name="description" content="Reeti Gandhi — Product Designer. ASCII portfolio with live terminal." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="ascii.css" />
+</head>
+<body>
+
+<!-- ============= BOOT SEQUENCE ============= -->
+<div class="boot" id="boot">
+  <div class="boot-content" id="bootLines"></div>
+  <div class="boot-skip" id="bootSkip">[ press any key or click to skip ]</div>
+</div>
+
+<!-- ============= NAV ============= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="badge">R.G<span class="blink"></span></span>
+      <span>reeti.exe</span>
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-cmd" id="termOpen" type="button" title="Press ` to toggle">
+      <span>▸</span> cmd<span style="color: var(--lime); display: inline-block; width: 7px; height: 12px; background: var(--lime); margin-left: 4px; animation: blink 0.9s steps(1) infinite;"></span>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============= HERO ============= -->
+<section class="hero shell">
+  <div class="hero-particles" id="heroParticles"></div>
+
+  <div class="hero-content">
+    <div class="hero-meta">
+      <span class="sticker lime"><span class="pulse"></span>Available · May 2026</span>
+      <span class="sticker yellow">★ Gurugram, IN</span>
+      <span class="sticker cyan">3+ yrs · LVL 99</span>
+      <span class="sticker pink">@ Curelink</span>
+    </div>
+
+    <pre class="hero-ascii glitch c-pink" id="heroAscii">██████╗ ███████╗███████╗████████╗██╗
+██╔══██╗██╔════╝██╔════╝╚══██╔══╝██║
+██████╔╝█████╗  █████╗     ██║   ██║
+██╔══██╗██╔══╝  ██╔══╝     ██║   ██║
+██║  ██║███████╗███████╗   ██║   ██║
+╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝</pre>
+
+    <pre class="hero-ascii c-violet" style="text-shadow: 3px 3px 0 var(--ink);"> ██████╗  █████╗ ███╗   ██╗██████╗ ██╗  ██╗██╗
+██╔════╝ ██╔══██╗████╗  ██║██╔══██╗██║  ██║██║
+██║  ███╗███████║██╔██╗ ██║██║  ██║███████║██║
+██║   ██║██╔══██║██║╚██╗██║██║  ██║██╔══██║██║
+╚██████╔╝██║  ██║██║ ╚████║██████╔╝██║  ██║██║
+ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝</pre>
+
+    <p class="hero-sub">
+      <b class="pink">// product designer</b> · I turn ambiguous problems into <b>measurable outcomes</b>. Currently shipping <b class="yellow">Disha AI</b> at Curelink — onboarding, paywall, design system, all from zero.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#work" class="btn primary">▸ ./view_work.sh</a>
+      <button class="btn pink" type="button" id="termOpen2" onclick="document.getElementById('termOpen').click()">▸ open_terminal</button>
+      <a href="mailto:reetigandhi1997@gmail.com" class="btn yellow">▸ send_email</a>
+    </div>
+
+    <div class="hero-waves" aria-hidden="true">
+<span class="row">~~^~^~~~~^~~^~~^~~~~^~~~~^~~^~~~^~~~~~^^~~^~~~~^~~~~~~^~~~~^~~~^~~~~^^~~^~~^~~~^~^~^~~~^~^~</span>
+<span class="row">~~~^~^~~~^^~~^~~~^~~~^~~~~^~~^~~^~~^~~~~~~^~~~~~^^~~~^~^~~~~~^^~~~~~~~^~~^~~^~~^~~^~~~~^~~~</span>
+<span class="row">~^~~~^~~~~~^~~~~~^~~~^~^~~~~~~^~~~^~~~~~^~~^~^~~~~^~~~~^~^~^~~~~^~~^~^~~~~^~~^~~^~~^~~~~~~^</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============= MARQUEE ============= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="item"><span class="c1">★</span> PRODUCT_DESIGN <span class="star">✦</span></div>
+    <div class="item"><span class="c2">◆</span> INTERACTION <span class="star">✦</span></div>
+    <div class="item"><span class="c3">▲</span> DESIGN_SYSTEMS <span class="star">✦</span></div>
+    <div class="item"><span class="c1">●</span> USER_RESEARCH <span class="star">✦</span></div>
+    <div class="item"><span class="c2">◉</span> AI_EXPERIENCES <span class="star">✦</span></div>
+    <div class="item"><span class="c3">✺</span> A11Y <span class="star">✦</span></div>
+  </div>
+  <div class="marquee-track">
+    <div class="item"><span class="c1">★</span> PRODUCT_DESIGN <span class="star">✦</span></div>
+    <div class="item"><span class="c2">◆</span> INTERACTION <span class="star">✦</span></div>
+    <div class="item"><span class="c3">▲</span> DESIGN_SYSTEMS <span class="star">✦</span></div>
+    <div class="item"><span class="c1">●</span> USER_RESEARCH <span class="star">✦</span></div>
+    <div class="item"><span class="c2">◉</span> AI_EXPERIENCES <span class="star">✦</span></div>
+    <div class="item"><span class="c3">✺</span> A11Y <span class="star">✦</span></div>
+  </div>
+</div>
+
+<!-- ============= NUMBERS ============= -->
+<section class="shell reveal" style="padding: 50px 0;">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 01_BY_THE_NUMBERS</span>  <span class="accent">═══════════════════════════════════════════</span></pre>
+  <div class="numbers">
+    <div class="num-card">
+      <div class="big c-pink">4×</div>
+      <pre class="bar c-pink">[████████████░░░░░]</pre>
+      <div class="label">first-time conversion lift on disha ai onboarding</div>
+    </div>
+    <div class="num-card">
+      <div class="big c-cyan">5×</div>
+      <pre class="bar c-cyan">[██████████████░░░]</pre>
+      <div class="label">daily active users after chat &amp; calling launch</div>
+    </div>
+    <div class="num-card">
+      <div class="big c-violet">100k+</div>
+      <pre class="bar c-violet">[████████████████░]</pre>
+      <div class="label">annual visitors served by museum installations</div>
+    </div>
+    <div class="num-card">
+      <div class="big c-orange">50+</div>
+      <pre class="bar c-orange">[█████████████░░░░]</pre>
+      <div class="label">reusable components shipped in the design system</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= WORK ============= -->
+<section id="work" class="shell">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 02_SELECTED_WORK</span>  <span class="accent">══════════════════════════════════════════════</span></pre>
+
+  <div class="section-head">
+    <pre class="figlet pink">
+██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗
+██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝
+██║ █╗ ██║██║   ██║██████╔╝█████╔╝ 
+██║███╗██║██║   ██║██╔══██╗██╔═██╗ 
+╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
+ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝</pre>
+    <span class="num">[ 02 / FLIPPED.HOVER FOR SHIMMER ]</span>
+  </div>
+
+  <div class="work-grid">
+
+    <!-- 01 DISHA AI -->
+    <article class="proj reveal">
+      <div class="proj-cover pink">
+        <span class="ribbon">LIVE · 2025</span>
+        <span class="num-corner">01</span>
+        <pre class="art"><span class="c-pink"> ╭─────────────╮
+ │ ◐    ────   │
+ │             │
+ │ ╭─────────╮ │
+ │ │░░░░░░░░░│ │
+ │ │░░<span class="c-yellow">DISHA</span>░░░│ │
+ │ │░░░<span class="c-yellow">AI</span>░░░░░│ │
+ │ ╰─────────╯ │
+ │             │
+ │ ▓▓▓▓▓▓▓▓▓▓▓ │
+ │ ▓▓▓▓▓▓▓     │
+ │ ▓▓▓         │
+ │             │
+ │ ╭─────────╮ │
+ │ │ <span class="c-yellow">GO  ▸</span>   │ │
+ │ ╰─────────╯ │
+ │     ───     │
+ ╰─────────────╯</span></pre>
+      </div>
+      <div class="proj-body">
+        <div class="tag">CURELINK · PRODUCT DESIGN</div>
+        <h3>Disha AI</h3>
+        <p>End-to-end onboarding, chat &amp; calling, subscription paywall, plus a 50+ component design system for an AI health companion built for Tier 2 &amp; 3 cities.</p>
+        <div class="metrics-row">
+          <div class="metric-block">
+            <div class="v c-pink">20→80%</div>
+            <pre class="bar c-pink">[████████░░]</pre>
+            <div class="k">conversion</div>
+          </div>
+          <div class="metric-block">
+            <div class="v c-cyan">5×</div>
+            <pre class="bar c-cyan">[█████████░]</pre>
+            <div class="k">DAU lift</div>
+          </div>
+          <div class="metric-block">
+            <div class="v c-violet">50+</div>
+            <pre class="bar c-violet">[██████████]</pre>
+            <div class="k">components</div>
+          </div>
+        </div>
+        <div class="tags-row">
+          <span class="tag-chip pink">Onboarding</span>
+          <span class="tag-chip yellow">Paywall</span>
+          <span class="tag-chip cyan">Chat UI</span>
+          <span class="tag-chip lime">Design System</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 PM MUSEUM -->
+    <article class="proj reveal">
+      <div class="proj-cover yellow">
+        <span class="ribbon">100k+ VISITORS / YR</span>
+        <span class="num-corner">02</span>
+        <pre class="art"><span class="c-orange">         ▲
+        ╱ ╲
+       ╱   ╲
+      ╱     ╲
+     ╱_______╲
+    │  <span class="c-pink">●●●</span>   │
+    │_________│
+   ┌───────────┐
+   │ ▓ ▓ ▓ ▓ ▓ │
+   │ ▓ ▓ ▓ ▓ ▓ │</span>
+   <span class="c-ink">║│║│║│║│║│║│║
+   ║│║│║│║│║│║│║
+   ║│║│║│║│║│║│║
+   ║│║│║│║│║│║│║
+   ║│║│║│║│║│║│║
+   ═════════════
+   ═════════════</span>
+   <span class="c-pink"> PM_MUSEUM ★</span></pre>
+      </div>
+      <div class="proj-body">
+        <div class="tag">TAGGLABS · EXHIBITION</div>
+        <h3>PM's Museum</h3>
+        <p>Interactive, gamified exhibits simplifying complex transport-network concepts for visitors across diverse age groups and literacy levels.</p>
+        <div class="metrics-row">
+          <div class="metric-block">
+            <div class="v c-orange">100k+</div>
+            <pre class="bar c-orange">[██████████]</pre>
+            <div class="k">visitors/yr</div>
+          </div>
+          <div class="metric-block">
+            <div class="v c-pink">5+</div>
+            <pre class="bar c-pink">[████████░░]</pre>
+            <div class="k">installations</div>
+          </div>
+        </div>
+        <div class="tags-row">
+          <span class="tag-chip yellow">Exhibition</span>
+          <span class="tag-chip pink">Gamification</span>
+          <span class="tag-chip violet">Wayfinding</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 SUPREME COURT -->
+    <article class="proj reveal">
+      <div class="proj-cover cyan">
+        <span class="ribbon">CIVIC · STORYTELLING</span>
+        <span class="num-corner">03</span>
+        <pre class="art"><span class="c-violet">     ╔═══════════════╗
+     ║  ⚖   ⚖   ⚖   ║
+     ║   ◉   ◉   ◉   ║
+     ╚═══════════════╝</span>
+     <span class="c-ink">║│║│║│║│║│║│║│║│║│
+     ║│║│║│║│║│║│║│║│║│
+     ║│║│║│║│║│║│║│║│║│
+     ║│║│║│║│║│║│║│║│║│
+     ║│║│║│║│║│║│║│║│║│
+     ║│║│║│║│║│║│║│║│║│
+     ║│║│║│║│║│║│║│║│║│
+     ═════════════════</span>
+     <span class="c-pink">CONSTITUTION ★ 1950</span></pre>
+      </div>
+      <div class="proj-body">
+        <div class="tag">TAGGLABS · DIGITAL</div>
+        <h3>Supreme Court Museum</h3>
+        <p>Concepts narrating India's constitutional journey — balancing historical accuracy with accessible, engaging storytelling for the public.</p>
+        <div class="metrics-row">
+          <div class="metric-block">
+            <div class="v c-violet">Multi</div>
+            <pre class="bar c-violet">[████████░░]</pre>
+            <div class="k">exhibits</div>
+          </div>
+          <div class="metric-block">
+            <div class="v c-pink">Hi-Fi</div>
+            <pre class="bar c-pink">[██████████]</pre>
+            <div class="k">prototypes</div>
+          </div>
+        </div>
+        <div class="tags-row">
+          <span class="tag-chip cyan">Narrative</span>
+          <span class="tag-chip violet">Digital</span>
+          <span class="tag-chip yellow">Civic</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 A11Y -->
+    <article class="proj reveal">
+      <div class="proj-cover lime">
+        <span class="ribbon">IIT ROORKEE · RESEARCH</span>
+        <span class="num-corner">04</span>
+        <pre class="art"><span class="c-violet">       ╭───────╮
+      ╱  ◉ ◉ ◉  ╲
+     │     ◯     │
+      ╲  ▔▔▔▔▔  ╱
+       ╰───────╯</span>
+
+  <span class="c-pink">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span>
+  <span class="c-orange">▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>
+  <span class="c-yellow">░░░░░░░░░░░░░░░░</span>
+
+  <span class="c-ink">┌──┐ ┌──┐ ┌──┐ ┌──┐
+  │N1│ │N2│ │N3│ │N4│
+  └──┘ └──┘ └──┘ └──┘
+  ┌──┐ ┌──┐ ┌──┐ ┌──┐
+  │N5│ │..│ │..│ │20│
+  └──┘ └──┘ └──┘ └──┘</span>
+  <span class="c-pink">  WCAG_FRAMEWORK ★</span></pre>
+      </div>
+      <div class="proj-body">
+        <div class="tag">LID, IIT ROORKEE · UX RESEARCH</div>
+        <h3>Accessibility Framework</h3>
+        <p>A structured, research-backed framework for inclusive digital interfaces — grounded in WCAG standards and 20+ primary user interviews.</p>
+        <div class="metrics-row">
+          <div class="metric-block">
+            <div class="v c-pink">20+</div>
+            <pre class="bar c-pink">[█████████░]</pre>
+            <div class="k">interviews</div>
+          </div>
+          <div class="metric-block">
+            <div class="v c-cyan">WCAG</div>
+            <pre class="bar c-cyan">[██████████]</pre>
+            <div class="k">aligned</div>
+          </div>
+        </div>
+        <div class="tags-row">
+          <span class="tag-chip lime">Research</span>
+          <span class="tag-chip pink">Accessibility</span>
+          <span class="tag-chip violet">Framework</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============= ABOUT ============= -->
+<section id="about" class="shell">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 03_ABOUT_ME</span>  <span class="accent">════════════════════════════════════════════════════</span></pre>
+
+  <div class="about">
+    <div class="about-portrait reveal">
+      <span class="bubble">hi! ✦</span>
+<pre><span class="c-ink">         ___________
+        ╱           ╲
+       ╱             ╲
+      │   <span class="c-pink">◉</span>     <span class="c-pink">◉</span>   │
+      │       <span class="c-violet">●</span>      │
+       ╲   <span class="c-pink">╰─────╯</span>   ╱
+        ╲___________╱
+         ╱│       │╲
+        ╱ │       │ ╲
+       ╱  │ <span class="c-pink">★ R.G ★</span> │  ╲
+      ╱   │       │   ╲
+          │       │
+          │_______│
+          ╱       ╲
+         ╱         ╲
+        ╱           ╲</span></pre>
+    </div>
+
+    <div class="about-text reveal">
+      <h3>// hi, I'm Reeti.</h3>
+      <p>An <span class="hl pink">architect</span> who fell for pixels. I shipped buildings before I shipped products — now I bring that <span class="hl">systems thinking</span> to every UX call.</p>
+      <p>I love turning <span class="hl lime">messy research</span> into clean flows, and flows into <span class="hl">measurable outcomes</span>. Currently designing an AI health companion that serves people in Tier 2 &amp; 3 cities.</p>
+      <div class="about-meta">
+        <div class="cell"><div class="k">based</div><div class="v">Gurugram, IN</div></div>
+        <div class="cell"><div class="k">exp.</div><div class="v">3+ years</div></div>
+        <div class="cell"><div class="k">stack</div><div class="v">Figma · Framer</div></div>
+        <div class="cell"><div class="k">now</div><div class="v">@ Curelink</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill tree -->
+  <div class="skill-tree reveal" style="margin-top: 24px;">
+<span class="root">$ tree skills/ --human</span>
+<span class="branch">skills/
+├── design/
+│   ├── <span class="lbl">ui &amp; visual</span>      <span class="bar pink">[████████████████░░] 96</span>
+│   ├── <span class="lbl">interaction</span>      <span class="bar cyan">[███████████████░░░] 92</span>
+│   ├── <span class="lbl">design systems</span>   <span class="bar yellow">[████████████████░░] 94</span>
+│   └── <span class="lbl">ux writing</span>       <span class="bar orange">[█████████████░░░░░] 82</span>
+├── research/
+│   ├── <span class="lbl">user interviews</span>  <span class="bar pink">[██████████████░░░░] 88</span>
+│   ├── <span class="lbl">usability tests</span>  <span class="bar lime">[█████████████░░░░░] 84</span>
+│   └── <span class="lbl">synthesis</span>        <span class="bar cyan">[██████████████░░░░] 86</span>
+├── tools/
+│   ├── <span class="lbl">figma</span>            <span class="bar pink">[██████████████████] 99</span>
+│   ├── <span class="lbl">framer</span>           <span class="bar yellow">[███████████████░░░] 90</span>
+│   └── <span class="lbl">adobe suite</span>      <span class="bar orange">[████████████░░░░░░] 75</span>
+└── secret/
+    └── <span class="lbl">caffeine</span>         <span class="bar lime">[██████████████████] ∞</span></span></div>
+</section>
+
+<!-- ============= TOOLS ============= -->
+<section class="shell reveal">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 04_TOOLKIT</span>  <span class="accent">══════════════════════════════════════════════════════</span></pre>
+
+  <div class="tools">
+    <div class="tool-card">
+<pre><span class="c-pink">  ▓▓▓</span>
+<span class="c-pink">  ▓▓▓</span><span class="c-orange">▓▓▓</span>
+<span class="c-orange">  ▓▓▓</span><span class="c-violet">▓▓▓</span>
+<span class="c-violet">  ▓▓▓</span><span class="c-cyan">▓▓▓</span>
+<span class="c-cyan">  ▓▓▓</span><span class="c-lime">▓▓▓</span>
+<span class="c-lime">     ▓▓▓</span></pre>
+      <div class="name">FIGMA</div>
+    </div>
+    <div class="tool-card">
+<pre><span class="c-cyan">┌────────┐
+│▓▓▓▓▓▓▓▓│
+└────┬───┘
+     │
+┌────┴───┐
+│▓▓▓▓▓▓▓▓│
+└────┬───┘
+     ▼
+   ┌─┴─┐
+   │▓▓▓│
+   └───┘</span></pre>
+      <div class="name">FRAMER</div>
+    </div>
+    <div class="tool-card">
+<pre><span class="c-violet">┌──────────┐
+│ ▓▓    ▓  │
+│ ▓ ▓   ▓  │
+│ ▓▓    ▓  │
+│ ▓     ▓  │
+│      <span class="c-pink">Ps</span> │
+└──────────┘</span></pre>
+      <div class="name">PHOTOSHOP</div>
+    </div>
+    <div class="tool-card">
+<pre><span class="c-orange">┌──────────┐
+│  ╱╲      │
+│ ╱  ╲     │
+│╱────╲    │
+│      ╲   │
+│       <span class="c-yellow">Ai</span> │
+└──────────┘</span></pre>
+      <div class="name">ILLUSTRATOR</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= EXPERIENCE ============= -->
+<section id="experience" class="shell">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 05_EXPERIENCE</span>  <span class="accent">═══════════════════════════════════════════════════</span></pre>
+
+  <div class="timeline reveal">
+    <div class="tl-row">
+      <pre class="marker"><span class="dot">●</span>
+│
+│</pre>
+      <span class="year">2025 — NOW</span>
+      <span class="role">Product Designer <span class="at">@ Curelink</span></span>
+      <span class="arrow">→</span>
+    </div>
+    <div class="tl-row">
+      <pre class="marker"><span class="dot c-yellow">●</span>
+│
+│</pre>
+      <span class="year">2024 — 2025</span>
+      <span class="role">UX Designer <span class="at">@ Tagglabs</span></span>
+      <span class="arrow">→</span>
+    </div>
+    <div class="tl-row">
+      <pre class="marker"><span class="dot c-cyan">●</span>
+│
+│</pre>
+      <span class="year">2024</span>
+      <span class="role">UX Research Intern <span class="at">@ LID, IIT Roorkee</span></span>
+      <span class="arrow">→</span>
+    </div>
+    <div class="tl-row">
+      <pre class="marker"><span class="dot c-violet">●</span>
+│
+│</pre>
+      <span class="year">2021 — 2022</span>
+      <span class="role">UI / UX Designer <span class="at">@ Root Info Solutions</span></span>
+      <span class="arrow">→</span>
+    </div>
+    <div class="tl-row">
+      <pre class="marker"><span class="dot c-orange">●</span></pre>
+      <span class="year">2020 — 2021</span>
+      <span class="role">Architectural Designer <span class="at">@ AGDC Group</span></span>
+      <span class="arrow">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============= EDUCATION ============= -->
+<section id="education" class="shell">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 06_EDUCATION</span>  <span class="accent">══════════════════════════════════════════════════</span></pre>
+
+  <div class="edu">
+    <div class="diploma a reveal">
+      <div class="frame">
+<pre>╔══════════════════════════╗
+║ <span class="c-pink">★    D I P L O M A    ★</span> ║
+╚══════════════════════════╝</pre>
+        <span class="deg">M.Des</span>
+        <span class="yrs">2022 — 2024</span>
+        <div class="sch">Product &amp; Communication Design<br/>NIFT, Gandhinagar</div>
+<pre style="margin-top: 10px;">  <span class="c-pink">~</span> <span class="c-cyan">~</span> <span class="c-violet">~</span> <span class="c-orange">~</span> <span class="c-pink">~</span> <span class="c-cyan">~</span></pre>
+      </div>
+    </div>
+    <div class="diploma b reveal">
+      <div class="frame">
+<pre>╔══════════════════════════╗
+║ <span class="c-violet">★    D I P L O M A    ★</span> ║
+╚══════════════════════════╝</pre>
+        <span class="deg">B.Arch</span>
+        <span class="yrs">2015 — 2020</span>
+        <div class="sch">Bachelor of Architecture<br/>Jai Narain Vyas University, Jodhpur</div>
+<pre style="margin-top: 10px;">  <span class="c-cyan">~</span> <span class="c-yellow">~</span> <span class="c-lime">~</span> <span class="c-pink">~</span> <span class="c-violet">~</span> <span class="c-cyan">~</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CONTACT ============= -->
+<section id="contact" class="shell">
+  <pre class="ascii-divider"><span class="accent">═══════════════════════════════════════════</span>  <span class="c-mute">// 07_SAY_HI</span>  <span class="accent">════════════════════════════════════════════════════════</span></pre>
+
+  <div class="contact-card">
+    <pre class="ascii-mail c-ink">      _______________________________
+     /                              ╱│
+    /                              ╱ │
+   /_____________________________ ╱  │
+   │  <span class="c-pink">✉  TO: REETI GANDHI</span>           │   │
+   │                              │   │
+   │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     │  ╱
+   │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓           │ ╱
+   │   ▓▓▓▓▓▓▓▓▓                │╱
+   │______________________________│</pre>
+
+    <span class="greet">▸ Say hi · Let's ship something</span>
+    <h2>Let's make<br/>something <span style="background: var(--yellow); border: 2.5px solid var(--ink); padding: 0 12px 4px; border-radius: 12px; display: inline-block; transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--ink);">▸ COOL ◂</span></h2>
+
+    <a class="contact-mail" href="mailto:reetigandhi1997@gmail.com">
+      reetigandhi1997@gmail.com
+      <span class="arr">↗</span>
+    </a>
+
+    <div class="socials">
+      <a href="https://www.behance.net/reetigandhi" target="_blank" rel="noopener" class="social violet">▸ BEHANCE</a>
+      <a href="#" class="social cyan">▸ LINKEDIN</a>
+      <a href="https://reetigandhiportfolio.framer.website/" target="_blank" rel="noopener" class="social lime">▸ FRAMER</a>
+      <a href="tel:+917976404737" class="social">▸ +91 79764 04737</a>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>© 2026 REETI_GANDHI<span class="blink"></span></span>
+    <span>tip: press ` to open terminal · type help</span>
+    <span>v3.0 · ASCII_EDITION</span>
+  </div>
+</section>
+
+</main>
+
+<!-- ============= LIVE TERMINAL ============= -->
+<div class="term" id="term">
+  <div class="term-bar" id="termBar">
+    <div class="dots">
+      <span class="dot r"></span>
+      <span class="dot y"></span>
+      <span class="dot g"></span>
+    </div>
+    <span>reeti@portfolio — zsh — 80×24</span>
+    <button class="close" id="termClose" type="button">×</button>
+  </div>
+  <div class="term-body" id="termBody"></div>
+  <div class="term-input-row">
+    <span class="prompt">reeti@portfolio ~ $</span>
+    <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false" placeholder="type a command... (try: help)" />
+  </div>
+</div>
+
+<script src="ascii.js"></script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reeti Gandhi · Product Designer · Neo</title>
+  <meta name="description" content="Reeti Gandhi — Product Designer. Neobrutalist portfolio, playable." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="neo.css" />
+</head>
+<body>
+  <!-- =================== NAV =================== -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand">
+        <div class="av">R</div>
+        <span>REETI.G</span>
+      </a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#play">Play</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-score" id="navScore" title="Find hidden stars across the page">
+        <span class="star">★</span>
+        <span><span id="scoreNum">0</span>/5 STARS</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- =================== HERO =================== -->
+    <section class="hero shell">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="badge-row">
+            <span class="badge lime"><span class="pulse"></span>Available · May 2026</span>
+            <span class="badge yellow">Based in Gurugram</span>
+            <span class="badge cyan">3+ yrs experience</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="word">REETI</span><br/>
+            <span class="word"><span class="underline">GANDHI</span></span><br/>
+            <span class="word"><span class="stamp">DESIGNS</span></span>
+          </h1>
+
+          <p class="hero-sub">
+            I'm a <b>product designer</b> turning ambiguous problems into measurable outcomes. Currently designing <b>Disha AI</b> at Curelink — chat, paywall, and a complete design system shipped from zero.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#work" class="btn primary">
+              See Selected Work
+              <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="#play" class="btn pink">
+              Play A Mini-Game
+              <span style="font-size:14px">🎮</span>
+            </a>
+            <a href="mailto:reetigandhi1997@gmail.com" class="btn yellow">
+              Email Me
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat"><b>4×</b> conversion lift</div>
+            <div class="hero-stat"><b>5×</b> DAU growth</div>
+            <div class="hero-stat"><b>100k+</b> users reached</div>
+          </div>
+
+          <!-- Hidden collectible #1 -->
+          <div class="collectible" data-star="1" style="top: 18px; right: 22px;" title="Collect me!"></div>
+        </div>
+
+        <!-- Sticker sheet -->
+        <div class="sticker-sheet">
+          <div class="sheet-head">
+            <span>Drag stickers · Sheet #001</span>
+            <span class="hint">🖱 Drag me</span>
+          </div>
+          <div class="sheet-canvas" id="stickerCanvas">
+            <div class="sticker pink" data-x="6" data-y="8" data-rot="-6">
+              <div class="body">UX ✦</div>
+            </div>
+            <div class="sticker yellow round" data-x="58" data-y="6" data-rot="10">
+              <div class="body">★</div>
+            </div>
+            <div class="sticker lime" data-x="10" data-y="44" data-rot="4">
+              <div class="body">SYSTEMS</div>
+            </div>
+            <div class="sticker cyan" data-x="58" data-y="38" data-rot="-8">
+              <div class="body">FIGMA · LVL 99</div>
+            </div>
+            <div class="sticker violet" data-x="34" data-y="70" data-rot="6">
+              <div class="body">↑ SHIP IT</div>
+            </div>
+            <div class="sticker orange round" data-x="72" data-y="68" data-rot="-12">
+              <div class="body">3+</div>
+            </div>
+            <div class="sticker ink" data-x="6" data-y="78" data-rot="2">
+              <div class="body">PROTOTYPE → REAL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== MARQUEE =================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="item">PRODUCT DESIGN<span class="star"></span></div>
+        <div class="item">INTERACTION<span class="star"></span></div>
+        <div class="item">DESIGN SYSTEMS<span class="star"></span></div>
+        <div class="item">USER RESEARCH<span class="star"></span></div>
+        <div class="item">AI EXPERIENCES<span class="star"></span></div>
+        <div class="item">ACCESSIBILITY<span class="star"></span></div>
+      </div>
+      <div class="marquee-track">
+        <div class="item">PRODUCT DESIGN<span class="star"></span></div>
+        <div class="item">INTERACTION<span class="star"></span></div>
+        <div class="item">DESIGN SYSTEMS<span class="star"></span></div>
+        <div class="item">USER RESEARCH<span class="star"></span></div>
+        <div class="item">AI EXPERIENCES<span class="star"></span></div>
+        <div class="item">ACCESSIBILITY<span class="star"></span></div>
+      </div>
+    </div>
+
+    <!-- =================== WORK =================== -->
+    <section id="work" class="shell" style="position:relative;">
+      <div class="section-head">
+        <h2>SELECTED <span class="hl yellow">WORK</span></h2>
+        <span class="num">[ 01 / FLIP CARDS TO REVEAL METRICS ]</span>
+      </div>
+
+      <div class="work-grid">
+        <!-- Project 1 — Disha AI -->
+        <div class="proj">
+          <div class="proj-inner">
+            <div class="proj-face">
+              <div class="proj-cover pink">
+                <div class="dots"></div>
+                <span class="label">LIVE · 2025</span>
+                <div class="device">
+                  <div class="b s"></div>
+                  <div class="b"></div>
+                  <div class="b btn"></div>
+                  <div class="b"></div>
+                  <div class="b s"></div>
+                  <div class="b chip"></div>
+                  <div class="b"></div>
+                </div>
+                <span class="num">01</span>
+              </div>
+              <div class="proj-body">
+                <div class="tag">CURELINK · PRODUCT DESIGN</div>
+                <h3>DISHA AI</h3>
+                <p>End-to-end onboarding, chat & calling, subscription paywall, and a 50+ component design system for an AI health companion serving Tier 2 & 3 cities.</p>
+                <button class="flip" type="button">FLIP FOR METRICS →</button>
+              </div>
+            </div>
+            <div class="proj-face proj-back">
+              <button class="close" type="button">×</button>
+              <div class="back-head">CASE STUDY · BY THE NUMBERS</div>
+              <h4>Outcomes</h4>
+              <div class="metrics-grid">
+                <div class="metric-pill"><div class="v">20→80%</div><div class="k">First-time conversion</div></div>
+                <div class="metric-pill"><div class="v">5×</div><div class="k">Daily active users</div></div>
+                <div class="metric-pill"><div class="v">2×</div><div class="k">Daily subscriptions</div></div>
+                <div class="metric-pill"><div class="v">50+</div><div class="k">Reusable components</div></div>
+              </div>
+              <div class="tag-row">
+                <span class="t">Onboarding</span>
+                <span class="t">Conversational UI</span>
+                <span class="t">Paywall</span>
+                <span class="t">Design System</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 — PM Museum -->
+        <div class="proj">
+          <div class="proj-inner">
+            <div class="proj-face">
+              <div class="proj-cover yellow">
+                <div class="dots"></div>
+                <span class="label">100K+ VISITORS / YR</span>
+                <div class="museum-art">
+                  <div>PM'S</div>
+                  <div class="out">MUSEUM</div>
+                </div>
+                <span class="num">02</span>
+              </div>
+              <div class="proj-body">
+                <div class="tag">TAGGLABS · EXHIBITION</div>
+                <h3>PM'S MUSEUM</h3>
+                <p>Interactive, gamified exhibits simplifying complex transport-network concepts for visitors across diverse age groups and literacy levels.</p>
+                <button class="flip" type="button">FLIP FOR METRICS →</button>
+              </div>
+            </div>
+            <div class="proj-face proj-back">
+              <button class="close" type="button">×</button>
+              <div class="back-head">CASE STUDY · BY THE NUMBERS</div>
+              <h4>Impact</h4>
+              <div class="metrics-grid">
+                <div class="metric-pill"><div class="v">100k+</div><div class="k">Annual visitors</div></div>
+                <div class="metric-pill"><div class="v">5+</div><div class="k">Installations shipped</div></div>
+                <div class="metric-pill"><div class="v">All ages</div><div class="k">Accessibility-first</div></div>
+                <div class="metric-pill"><div class="v">Tight</div><div class="k">Gov-contract timelines</div></div>
+              </div>
+              <div class="tag-row">
+                <span class="t">Exhibition</span>
+                <span class="t">Gamification</span>
+                <span class="t">Wayfinding</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 — Supreme Court -->
+        <div class="proj">
+          <div class="proj-inner">
+            <div class="proj-face">
+              <div class="proj-cover cyan">
+                <div class="dots"></div>
+                <span class="label">CIVIC · STORYTELLING</span>
+                <div class="museum-art">
+                  <div>SUPREME</div>
+                  <div class="out">COURT</div>
+                </div>
+                <span class="num">03</span>
+              </div>
+              <div class="proj-body">
+                <div class="tag">TAGGLABS · DIGITAL</div>
+                <h3>SUPREME COURT MUSEUM</h3>
+                <p>Concepts narrating India's constitutional journey — balancing historical accuracy with accessible, engaging storytelling for the public.</p>
+                <button class="flip" type="button">FLIP FOR METRICS →</button>
+              </div>
+            </div>
+            <div class="proj-face proj-back">
+              <button class="close" type="button">×</button>
+              <div class="back-head">CASE STUDY · DELIVERY</div>
+              <h4>Scope</h4>
+              <div class="metrics-grid">
+                <div class="metric-pill"><div class="v">Hi-Fi</div><div class="k">Prototypes & specs</div></div>
+                <div class="metric-pill"><div class="v">Multi</div><div class="k">Digital exhibits</div></div>
+                <div class="metric-pill"><div class="v">Civic</div><div class="k">Public audience</div></div>
+                <div class="metric-pill"><div class="v">Tight</div><div class="k">Government timelines</div></div>
+              </div>
+              <div class="tag-row">
+                <span class="t">Narrative</span>
+                <span class="t">Digital</span>
+                <span class="t">Exhibition</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 — Accessibility -->
+        <div class="proj">
+          <div class="proj-inner">
+            <div class="proj-face">
+              <div class="proj-cover lime">
+                <div class="dots"></div>
+                <span class="label">IIT ROORKEE · RESEARCH</span>
+                <div class="research-art">
+                  <div></div><div class="f"></div><div></div>
+                  <div class="a"></div><div></div><div class="f"></div>
+                  <div class="f"></div><div></div><div class="a"></div>
+                </div>
+                <span class="num">04</span>
+              </div>
+              <div class="proj-body">
+                <div class="tag">LID, IIT ROORKEE · UX RESEARCH</div>
+                <h3>A11Y FRAMEWORK</h3>
+                <p>A structured, research-backed framework for inclusive digital interfaces — grounded in WCAG standards and 20+ primary user interviews.</p>
+                <button class="flip" type="button">FLIP FOR METRICS →</button>
+              </div>
+            </div>
+            <div class="proj-face proj-back">
+              <button class="close" type="button">×</button>
+              <div class="back-head">CASE STUDY · METHOD</div>
+              <h4>Research</h4>
+              <div class="metrics-grid">
+                <div class="metric-pill"><div class="v">20+</div><div class="k">User interviews</div></div>
+                <div class="metric-pill"><div class="v">WCAG</div><div class="k">Standards aligned</div></div>
+                <div class="metric-pill"><div class="v">6 mo</div><div class="k">Lab residency</div></div>
+                <div class="metric-pill"><div class="v">Lab</div><div class="k">Guidelines adopted</div></div>
+              </div>
+              <div class="tag-row">
+                <span class="t">Research</span>
+                <span class="t">Accessibility</span>
+                <span class="t">Framework</span>
+                <span class="t">Synthesis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden collectible #2 -->
+      <div class="collectible" data-star="2" style="top: 12%; left: -14px;" title="Collect me!"></div>
+    </section>
+
+    <!-- =================== ABOUT =================== -->
+    <section id="about" class="shell" style="position:relative;">
+      <div class="section-head">
+        <h2>HI, I'M <span class="hl cyan">REETI</span></h2>
+        <span class="num">[ 02 / ABOUT ]</span>
+      </div>
+
+      <div class="about">
+        <div class="about-card hello">
+          <p class="about-text">
+            An <span class="hl">architect</span> who fell for pixels. I shipped buildings before I shipped products — now I bring that <span class="hl pink">systems thinking</span> to every UX call.
+          </p>
+          <p class="about-text" style="font-size: clamp(20px, 1.8vw, 28px);">
+            I love turning <span class="hl lime">messy research</span> into clean flows, and flows into <span class="hl">measurable outcomes</span>.
+          </p>
+          <div class="about-meta">
+            <div class="cell"><div class="k">Based in</div><div class="v">Gurugram, IN</div></div>
+            <div class="cell"><div class="k">Experience</div><div class="v">3+ Years</div></div>
+            <div class="cell"><div class="k">Toolkit</div><div class="v">Figma + Framer</div></div>
+            <div class="cell"><div class="k">Currently</div><div class="v">@ Curelink</div></div>
+          </div>
+        </div>
+
+        <!-- Skills stat card -->
+        <div class="about-card stat-card brutal-lg">
+          <h3>SKILL TREE <span class="lvl">LVL 99</span></h3>
+          <div class="stat">
+            <div class="stat-row"><span>UI / VISUAL DESIGN</span><span>96</span></div>
+            <div class="stat-bar pink" data-val="96"><div class="fill" style="width:96%"></div></div>
+          </div>
+          <div class="stat">
+            <div class="stat-row"><span>INTERACTION DESIGN</span><span>92</span></div>
+            <div class="stat-bar cyan" data-val="92"><div class="fill" style="width:92%"></div></div>
+          </div>
+          <div class="stat">
+            <div class="stat-row"><span>DESIGN SYSTEMS</span><span>94</span></div>
+            <div class="stat-bar yellow" data-val="94"><div class="fill" style="width:94%"></div></div>
+          </div>
+          <div class="stat">
+            <div class="stat-row"><span>USER RESEARCH</span><span>88</span></div>
+            <div class="stat-bar violet" data-val="88"><div class="fill" style="width:88%"></div></div>
+          </div>
+          <div class="stat">
+            <div class="stat-row"><span>PROTOTYPING</span><span>90</span></div>
+            <div class="stat-bar orange" data-val="90"><div class="fill" style="width:90%"></div></div>
+          </div>
+          <div class="stat">
+            <div class="stat-row"><span>UX WRITING</span><span>82</span></div>
+            <div class="stat-bar" data-val="82"><div class="fill" style="width:82%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden collectible #3 -->
+      <div class="collectible" data-star="3" style="bottom: 12%; right: -14px;" title="Collect me!"></div>
+    </section>
+
+    <!-- =================== MINI-GAME =================== -->
+    <section id="play" class="shell">
+      <div class="section-head">
+        <h2>BUG <span class="hl pink">HUNT</span></h2>
+        <span class="num">[ 03 / 20 SECONDS TO SHIP ]</span>
+      </div>
+
+      <div class="game-card">
+        <h3>CATCH BUGS BEFORE PRODUCTION SHIPS!</h3>
+        <p>// Click as many bugs as you can in 20 seconds · Gold bugs = 5 points</p>
+        <div class="game-meta">
+          <div class="game-pill">⏱ <span id="gameTime">20</span>s</div>
+          <div class="game-pill">⭐ <span id="gameScore">0</span> points</div>
+          <div class="game-pill" id="gameHigh">🏆 BEST: 0</div>
+          <button class="btn primary" id="gameStart" style="padding: 8px 16px; box-shadow: 3px 3px 0 var(--ink);">START</button>
+        </div>
+        <div class="game-board" id="gameBoard"></div>
+      </div>
+    </section>
+
+    <!-- =================== EXPERIENCE =================== -->
+    <section id="experience" class="shell" style="position:relative;">
+      <div class="section-head">
+        <h2>THE <span class="hl lime">PATH</span></h2>
+        <span class="num">[ 04 / DRAG TO REORDER ]</span>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="tl-card" draggable="true" data-id="0">
+          <span class="grip">⋮⋮</span>
+          <span class="year">2025 — NOW</span>
+          <span class="role">PRODUCT DESIGNER</span>
+          <span class="place">CURELINK · GURUGRAM</span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="tl-card" draggable="true" data-id="1">
+          <span class="grip">⋮⋮</span>
+          <span class="year">2024 — 2025</span>
+          <span class="role">UX DESIGNER</span>
+          <span class="place">TAGGLABS · MUSEUMS</span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="tl-card" draggable="true" data-id="2">
+          <span class="grip">⋮⋮</span>
+          <span class="year">2024</span>
+          <span class="role">UX RESEARCH INTERN</span>
+          <span class="place">LID · IIT ROORKEE</span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="tl-card" draggable="true" data-id="3">
+          <span class="grip">⋮⋮</span>
+          <span class="year">2021 — 2022</span>
+          <span class="role">UI / UX DESIGNER</span>
+          <span class="place">ROOT INFO SOLUTIONS</span>
+          <span class="arrow">→</span>
+        </div>
+        <div class="tl-card" draggable="true" data-id="4">
+          <span class="grip">⋮⋮</span>
+          <span class="year">2020 — 2021</span>
+          <span class="role">ARCHITECTURAL DESIGNER</span>
+          <span class="place">AGDC GROUP</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+
+      <!-- Hidden collectible #4 -->
+      <div class="collectible" data-star="4" style="top: 60%; right: 2%;" title="Collect me!"></div>
+    </section>
+
+    <!-- =================== EDUCATION =================== -->
+    <section id="education" class="shell">
+      <div class="section-head">
+        <h2>SCHOOL <span class="hl yellow">DAYS</span></h2>
+        <span class="num">[ 05 / EDUCATION ]</span>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card a">
+          <span class="yrs">2022 — 2024</span>
+          <h3>M.DES · PRODUCT &amp; COMMUNICATION DESIGN</h3>
+          <p>National Institute of Fashion Technology (NIFT), Gandhinagar</p>
+          <div class="seal">M</div>
+        </div>
+        <div class="edu-card b">
+          <span class="yrs">2015 — 2020</span>
+          <h3>B.ARCH · BACHELOR OF ARCHITECTURE</h3>
+          <p>Jai Narain Vyas University, Jodhpur</p>
+          <div class="seal">B</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONTACT =================== -->
+    <section id="contact" class="shell" style="position:relative;">
+      <div class="contact-card">
+        <span class="greet">SAY HI · LET'S BUILD</span>
+        <h2>
+          LET'S MAKE<br/>
+          SOMETHING <span class="stamp">FUN</span>
+        </h2>
+        <a class="contact-mail" href="mailto:reetigandhi1997@gmail.com">
+          reetigandhi1997@gmail.com
+          <span class="arr">↗</span>
+        </a>
+        <div class="socials">
+          <a href="https://www.behance.net/reetigandhi" target="_blank" rel="noopener" class="social violet">BEHANCE ↗</a>
+          <a href="#" class="social cyan">LINKEDIN ↗</a>
+          <a href="https://reetigandhiportfolio.framer.website/" target="_blank" rel="noopener" class="social lime">FRAMER ↗</a>
+          <a href="tel:+917976404737" class="social">+91 79764 04737</a>
+        </div>
+
+        <!-- Hidden collectible #5 -->
+        <div class="collectible" data-star="5" style="top: 14px; left: 14px;" title="Collect me!"></div>
+      </div>
+
+      <div class="foot">
+        <span>© 2026 REETI GANDHI</span>
+        <span>TIP: TRY ↑↑↓↓←→←→ FOR A SURPRISE</span>
+        <span>V 2.0 · NEOBRUTAL ED.</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast for achievements -->
+  <div class="toast" id="toast">
+    <span class="icon"></span>
+    <span id="toastText">Achievement unlocked!</span>
+  </div>
+
+  <script src="neo.js"></script>
+</body>
+</html>

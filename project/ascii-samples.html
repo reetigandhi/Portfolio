@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ASCII Tone Samples</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&family=IBM+Plex+Mono:wght@400;500;700&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px;
+    background: #1a1a1a;
+    font-family: "Geist Mono", "JetBrains Mono", monospace;
+    color: #fff;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+    color: #fff;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .sample {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+  }
+  .sample-label {
+    position: absolute;
+    top: 12px; left: 12px;
+    z-index: 5;
+    background: rgba(255,255,255,0.92);
+    color: #1a1a1a;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ============ 1. Terminal hacker ============ */
+  .s-hacker {
+    background: #0a0e0a;
+    color: #4ade80;
+    font-family: "JetBrains Mono", monospace;
+    padding: 28px;
+    font-size: 11px;
+    line-height: 1.45;
+    position: relative;
+  }
+  .s-hacker::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      rgba(74, 222, 128, 0.04) 2px 3px
+    );
+    pointer-events: none;
+  }
+  .s-hacker::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+  }
+  .s-hacker .prompt { color: #4ade80; }
+  .s-hacker .dim { color: #4ade80; opacity: 0.5; }
+  .s-hacker .hl { color: #fff; background: #4ade80; padding: 0 2px; }
+  .s-hacker pre {
+    margin: 0;
+    font-family: inherit;
+    color: #4ade80;
+  }
+  .s-hacker .blink {
+    display: inline-block;
+    width: 8px; height: 13px;
+    background: #4ade80;
+    vertical-align: middle;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ============ 2. Retro DOS/BBS ============ */
+  .s-dos {
+    background: #1a1208;
+    color: #FFB000;
+    font-family: "VT323", "IBM Plex Mono", monospace;
+    padding: 24px;
+    font-size: 16px;
+    line-height: 1.1;
+    position: relative;
+    text-shadow: 0 0 4px rgba(255, 176, 0, 0.4);
+  }
+  .s-dos::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0 1px,
+      rgba(255, 176, 0, 0.05) 1px 2px
+    );
+    pointer-events: none;
+  }
+  .s-dos pre { margin: 0; font-family: inherit; }
+  .s-dos .box {
+    border: 1px solid #FFB000;
+    padding: 8px;
+    margin-top: 8px;
+  }
+  .s-dos .inv {
+    background: #FFB000;
+    color: #1a1208;
+    padding: 0 6px;
+    text-shadow: none;
+  }
+
+  /* ============ 3. Modern editorial ============ */
+  .s-editorial {
+    background: #F4F1EA;
+    color: #1a1a1a;
+    font-family: "JetBrains Mono", monospace;
+    padding: 28px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .s-editorial .label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 8px;
+  }
+  .s-editorial .name {
+    font-family: "Geist Mono", monospace;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin: 8px 0 14px;
+  }
+  .s-editorial .name .ital {
+    font-style: italic;
+    color: #C7553E;
+    font-family: "Georgia", serif;
+    font-weight: 400;
+  }
+  .s-editorial pre {
+    margin: 6px 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8px;
+    line-height: 1;
+    color: #1a1a1a;
+  }
+  .s-editorial .accent { color: #C7553E; }
+  .s-editorial .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .s-editorial .meta span {
+    border: 1px solid #1a1a1a;
+    padding: 4px 8px;
+    border-radius: 999px;
+  }
+
+  /* ============ 4. Playful zine ============ */
+  .s-zine {
+    background: #FFF1D6;
+    color: #0A0A0A;
+    font-family: "JetBrains Mono", monospace;
+    padding: 22px;
+    font-size: 11px;
+    line-height: 1.4;
+    position: relative;
+  }
+  .s-zine::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(#0A0A0A 1px, transparent 1px);
+    background-size: 16px 16px;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  .s-zine pre {
+    margin: 0;
+    font-family: inherit;
+    font-size: 10px;
+    line-height: 1.1;
+  }
+  .s-zine .pink { color: #FF5A8A; font-weight: 700; }
+  .s-zine .lime { color: #4ade80; font-weight: 700; }
+  .s-zine .cyan { color: #06b6d4; font-weight: 700; }
+  .s-zine .violet { color: #a78bfa; font-weight: 700; }
+  .s-zine .orange { color: #FF8A3D; font-weight: 700; }
+  .s-zine .sticker {
+    display: inline-block;
+    background: #FFD93D;
+    border: 2px solid #0A0A0A;
+    padding: 4px 10px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 #0A0A0A;
+    font-weight: 700;
+    transform: rotate(-3deg);
+    margin: 4px 6px 4px 0;
+  }
+  .s-zine .sticker.pink { background: #FF5A8A; color: #0A0A0A; }
+  .s-zine .sticker.cyan { background: #6EE7E7; color: #0A0A0A; }
+  .s-zine .sticker.lime { background: #B6F26C; color: #0A0A0A; }
+  .s-zine .name {
+    font-family: "Archivo Black", "Geist Mono", monospace;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 8px 0 6px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<h1>// ASCII portfolio tone — 4 samples</h1>
+<div class="grid">
+
+  <!-- 1. Terminal hacker -->
+  <div class="sample s-hacker">
+    <div class="sample-label">1 · Terminal hacker</div>
+<pre>
+<span class="dim">┌─ reeti@portfolio ─────────────┐</span>
+<span class="dim">│</span> <span class="prompt">$</span> whoami
+<span class="dim">│</span> > reeti gandhi
+<span class="dim">│</span> > <span class="hl">product designer</span>
+<span class="dim">│</span> > based: gurugram, IN
+<span class="dim">│</span>
+<span class="dim">│</span> <span class="prompt">$</span> cat skills.txt
+<span class="dim">│</span> [████████████████████] 96%
+<span class="dim">│</span> ui · figma · systems
+<span class="dim">│</span>
+<span class="dim">│</span> <span class="prompt">$</span> ls projects/
+<span class="dim">│</span> 01_disha_ai.case
+<span class="dim">│</span> 02_pm_museum.case
+<span class="dim">│</span> 03_supreme_court.case
+<span class="dim">│</span>
+<span class="dim">│</span> <span class="prompt">$</span> _<span class="blink"></span>
+<span class="dim">└───────────────────────────────┘</span>
+</pre>
+  </div>
+
+  <!-- 2. Retro DOS -->
+  <div class="sample s-dos">
+    <div class="sample-label">2 · Retro DOS / BBS</div>
+<pre>
+╔═══════════════════════════════╗
+║  <span class="inv"> REETI GANDHI </span> PORTFOLIO v2.0   ║
+╚═══════════════════════════════╝
+
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 96%
+
+  [F1] WORK........ press to view
+  [F2] ABOUT....... press to view
+  [F3] CONTACT..... press to view
+
+  ┌─────────────────────────────┐
+  │  > PRODUCT DESIGNER         │
+  │  > 3+ YRS EXPERIENCE        │
+  │  > AVAILABLE FOR HIRE       │
+  └─────────────────────────────┘
+
+       A:\&gt; _
+</pre>
+  </div>
+
+  <!-- 3. Modern editorial -->
+  <div class="sample s-editorial">
+    <div class="sample-label">3 · Modern editorial</div>
+    <div class="label-row">
+      <span>// Portfolio · 2026</span>
+      <span>v 3.0</span>
+    </div>
+    <div class="name">REETI<br/><span class="ital">gandhi.</span></div>
+<pre class="accent">    ╱╲    
+   ╱  ╲   product
+  ╱────╲  designer
+ ╱      ╲ </pre>
+    <div style="margin-top: 10px; font-size: 11px; line-height: 1.5;">
+      A research-driven product designer turning ambiguous problems into <span class="accent">measurable outcomes</span>.
+    </div>
+    <div class="meta">
+      <span>Gurugram</span>
+      <span>3+ yrs</span>
+      <span>Curelink</span>
+    </div>
+  </div>
+
+  <!-- 4. Playful zine -->
+  <div class="sample s-zine">
+    <div class="sample-label">4 · Playful zine</div>
+    <div style="position: relative; z-index: 2;">
+      <span class="sticker pink">★ HIRE ME</span>
+      <span class="sticker">v2.0</span>
+      <span class="sticker cyan">LVL 99</span>
+      <div class="name">REETI <span style="color:#FF5A8A">G.</span></div>
+<pre>
+<span class="pink">  /\_/\  </span>   <span class="cyan">┌──────────┐</span>
+<span class="pink"> ( ^.^ ) </span>   <span class="cyan">│ ux + ui  │</span>
+<span class="pink">  > ^ <  </span>   <span class="cyan">│ systems  │</span>
+<span class="pink">         </span>   <span class="cyan">└──────────┘</span>
+
+<span class="lime">[████████░░] 80%</span>  figma
+<span class="orange">[██████████] 99%</span>  caffeine
+<span class="violet">[█████░░░░░] 50%</span>  sleep
+</pre>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
