@@ -188,7 +188,7 @@ function Hero({ cursor }) {
             <a href="#contact" className="btn dark">
               Let's talk <ArrowChunk size={18} color={GroovyColors.cream3} />
             </a>
-            <a href="https://drive.google.com/file/d/1XXpPfrT9uc9vcKm3rafQanlhrApiMj34/view?usp=sharing" target="_blank" rel="noopener" className="btn yellow">
+            <a href="https://drive.google.com/file/d/1LOC_dtPijztO3DDTRTFP6YHR-__kYwSz/view?usp=sharing" target="_blank" rel="noopener" className="btn yellow">
               Resume ↗
             </a>
           </div>
