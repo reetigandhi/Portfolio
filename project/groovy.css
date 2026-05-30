@@ -307,13 +307,10 @@ body::before {
   font-size: 0.94em;
 }
 .hero-intro .yellow-pill {
-  display: inline-block;
   background: var(--yellow);
-  border: var(--ink-border-thin);
-  padding: 1px 10px 3px;
-  border-radius: 999px;
+  padding: 0 6px 2px;
+  border-radius: 4px;
   font-weight: 700;
-  font-size: 0.94em;
 }
 
 .hero-cta {
@@ -364,6 +361,12 @@ body::before {
 .float-wobble { animation: wobble 4s ease-in-out infinite; }
 .float-spin { animation: spin 12s linear infinite; }
 .float-bob { animation: bob 5s ease-in-out infinite; }
+
+/* Mobile: lift the planet and rocket out of the hero text */
+@media (max-width: 760px) {
+  .hero-planet { top: 30px !important; }
+  .hero-rocket { top: 250px !important; left: -8px !important; }
+}
 
 @keyframes wobble {
   0%, 100% { transform: rotate(-6deg); }
