@@ -307,13 +307,10 @@ body::before {
   font-size: 0.94em;
 }
 .hero-intro .yellow-pill {
-  display: inline-block;
   background: var(--yellow);
-  border: var(--ink-border-thin);
-  padding: 1px 10px 3px;
-  border-radius: 999px;
+  padding: 0 6px 2px;
+  border-radius: 4px;
   font-weight: 700;
-  font-size: 0.94em;
 }
 
 .hero-cta {
@@ -364,6 +361,12 @@ body::before {
 .float-wobble { animation: wobble 4s ease-in-out infinite; }
 .float-spin { animation: spin 12s linear infinite; }
 .float-bob { animation: bob 5s ease-in-out infinite; }
+
+/* Mobile: lift the planet and rocket out of the hero text */
+@media (max-width: 760px) {
+  .hero-planet { top: 30px !important; }
+  .hero-rocket { top: 250px !important; left: -8px !important; }
+}
 
 @keyframes wobble {
   0%, 100% { transform: rotate(-6deg); }
@@ -488,6 +491,12 @@ body::before {
   gap: 28px;
 }
 @media (max-width: 820px) { .work-grid { grid-template-columns: 1fr; } }
+/* Mobile: show the full cover image (no crop) on a matching cream background */
+@media (max-width: 760px) {
+  .proj-cover.has-img { background: var(--img-bg, #FAECD8) !important; }
+  .proj-cover.has-img .proj-img { object-fit: contain; }
+  .proj-cover .proj-ribbon { display: none; }
+}
 
 .proj {
   background: var(--cream-3);
@@ -499,7 +508,10 @@ body::before {
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
+/* Stretch the link wrapper so cards in a row match height on desktop */
+.work-grid > .reveal > a { display: block; height: 100%; }
 .proj:hover {
   transform: translate(-3px, -3px);
   box-shadow: 9px 9px 0 var(--ink);
@@ -513,6 +525,19 @@ body::before {
   align-items: center;
   justify-content: center;
 }
+.proj-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Image covers lock to a fixed 16:9 box so the image fits with no crop at any width */
+.proj-cover.has-img {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
 .proj-cover.pink { background: var(--pink); }
 .proj-cover.yellow { background: var(--yellow); }
 .proj-cover.cyan { background: var(--cyan); }
@@ -520,6 +545,7 @@ body::before {
 
 .proj-num {
   position: absolute;
+  z-index: 2;
   top: 16px; left: 18px;
   font-family: var(--display);
   font-size: 22px;
@@ -531,6 +557,7 @@ body::before {
 }
 .proj-ribbon {
   position: absolute;
+  z-index: 2;
   top: 18px; right: 18px;
   background: var(--ink);
   color: var(--cream-3);
@@ -599,6 +626,11 @@ body::before {
 .metric.violet .v { color: var(--violet); }
 .metric.orange .v { color: var(--orange); }
 .metric.green .v { color: var(--green); }
+/* Mobile: shrink metric values + padding so wide ones like "20→80%" don't overflow */
+@media (max-width: 600px) {
+  .metric { padding: 10px 8px; min-width: 80px; }
+  .metric .v { font-size: 17px; }
+}
 
 .chips {
   display: flex;
@@ -984,6 +1016,16 @@ body::before {
   font-size: clamp(26px, 3.6vw, 44px);
   box-shadow: 8px 8px 0 var(--pink);
   transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  max-width: 100%;
+}
+@media (max-width: 760px) {
+  .contact-mail {
+    margin-top: 28px;
+    padding: 14px 16px 16px;
+    font-size: clamp(13px, 4vw, 26px);
+    box-shadow: 5px 5px 0 var(--pink);
+  }
 }
 .contact-mail:hover {
   transform: translate(-3px, -3px);

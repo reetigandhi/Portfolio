@@ -129,10 +129,10 @@ function Hero({ cursor }) {
         <div className="float float-spin" style={{ top: "120px", left: "8%" }}>
           <Sun size={70} />
         </div>
-        <div className="float float-bob" style={{ top: "100px", right: "10%" }}>
+        <div className="float float-bob hero-planet" style={{ top: "100px", right: "10%" }}>
           <Planet size={90} fill={GroovyColors.cyan} ring={GroovyColors.pink} />
         </div>
-        <div className="float float-wobble" style={{ top: "280px", left: "4%" }}>
+        <div className="float float-wobble hero-rocket" style={{ top: "280px", left: "4%" }}>
           <Rocket size={70} />
         </div>
         <div className="float float-bob" style={{ top: "320px", right: "5%" }}>
@@ -223,6 +223,8 @@ function Projects({ cursor }) {
         { t: "Design System", c: "green" },
       ],
       art: <CoverDisha />,
+      image: "uploads/disha-cover.png",
+      imageBg: "#FAECD8",
       link: "https://www.behance.net/gallery/235793031/Disha-AI-Health-Coach",
     },
     {
@@ -244,6 +246,8 @@ function Projects({ cursor }) {
         { t: "Wayfinding", c: "cyan" },
       ],
       art: <CoverMuseum />,
+      image: "uploads/gatishakti-cover.png",
+      imageBg: "#F4E1CA",
       link: "https://www.behance.net/gallery/235756769/Interactive-Installation-Designs",
     },
   ];
@@ -259,19 +263,16 @@ function Projects({ cursor }) {
               <span className="stroke">stuff</span> ↓
             </h2>
           </div>
-          <p className="section-sub">
-            Two big chapters — an AI health coach reaching real users, and museum installations seen by 100k+ visitors a year.
-          </p>
         </div>
 
         <div className="work-grid">
           {projects.map((p, i) => (
             <Reveal key={i} delay={i * 80}>
               <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}><article className="proj">
-                <div className={`proj-cover ${p.cover}`}>
+                <div className={`proj-cover ${p.cover}${p.image ? " has-img" : ""}`} style={p.imageBg ? { "--img-bg": p.imageBg } : undefined}>
                   <span className="proj-num">{p.num}</span>
                   <span className="proj-ribbon">{p.ribbon}</span>
-                  {p.art}
+                  {p.image ? <img className="proj-img" src={p.image} alt={p.title} /> : p.art}
                 </div>
                 <div className="proj-body">
                   <div className="proj-tag">{p.tag}</div>
@@ -407,9 +408,6 @@ function About({ cursor }) {
               hi, I&apos;m <span className="ribbon cyan">Reeti</span> ✦
             </h2>
           </div>
-          <p className="section-sub">
-            Architect → designer. Systems thinker. Caffeine-powered. Will draw a flow on any surface within reach.
-          </p>
         </div>
 
         <div className="about">
@@ -429,8 +427,6 @@ function About({ cursor }) {
               <div style={{ fontFamily: "var(--mono)", fontSize: 12, opacity: 0.78, marginTop: 4, letterSpacing: "0.08em" }}>
                 PRODUCT DESIGNER · ROOTED IN RAJASTHAN
               </div>
-
-              <div className="rajasthan-stamp">✦ desert soul · digital craft ✦</div>
 
               {/* decorative corner stars */}
               <div style={{ position: "absolute", top: 14, left: 14 }}><Sparkle4 size={26} fill={GroovyColors.yellow} /></div>
@@ -454,8 +450,6 @@ function About({ cursor }) {
               <div className="about-meta">
                 <div className="meta-cell"><div className="k">based</div><div className="v">Gurugram</div></div>
                 <div className="meta-cell"><div className="k">exp.</div><div className="v">2+ yrs</div></div>
-                <div className="meta-cell"><div className="k">stack</div><div className="v">Figma · Framer</div></div>
-                <div className="meta-cell"><div className="k">focus</div><div className="v">AI · Health</div></div>
               </div>
             </div>
           </Reveal>
@@ -518,9 +512,6 @@ function Skills() {
               the <span className="ribbon">toolbox</span>
             </h2>
           </div>
-          <p className="section-sub">
-            Three buckets: <b>craft</b>, <b>research</b>, and the apps where it all gets made.
-          </p>
         </div>
 
         <div className="skills-grid">
@@ -553,7 +544,7 @@ function Experience() {
     { color: "pink", year: "2025 — 2026", role: "Product Designer", at: "Curelink", body: "Led design for Disha AI — an AI health companion. Owned onboarding, paywall, chat & calling, and a 50+ component design system." },
     { color: "yellow", year: "2024 — 2025", role: "UX Designer", at: "Tagglabs", body: "Designed museum installations (PM's Museum, Supreme Court Museum) reaching 100k+ visitors a year. Gamified hard concepts for mixed audiences." },
     { color: "cyan", year: "2024", role: "UX Research Intern", at: "LID, IIT Roorkee", body: "Built a research-backed accessibility framework grounded in WCAG and 20+ primary user interviews." },
-    { color: "violet", year: "2021 — 2022", role: "UI / UX Designer", at: "Root Info Solutions", body: "Shipped product UI across enterprise dashboards and mobile flows. Cut my teeth on real-world handoff and shipping cadence." },
+    { color: "violet", year: "2021 — 2022", role: "UI / UX Designer", at: "Root Info Solutions", body: "Shipped product UI across enterprise dashboards and mobile flows." },
     { color: "orange", year: "2020 — 2021", role: "Architectural Designer", at: "AGDC Group", body: "Designed physical spaces before pixels. Where the systems-thinking habit started." },
   ];
   return (
@@ -614,7 +605,7 @@ function Education() {
               <span className="deg">M.Des</span>
               <div><span className="yrs">2022 — 2024</span></div>
               <div className="sch">
-                <b>Product &amp; Communication Design</b><br />
+                <b>Experience Design</b><br />
                 NIFT, Gandhinagar
               </div>
               <div style={{ marginTop: 18, display: "flex", gap: 10 }}>
@@ -649,6 +640,23 @@ function Education() {
 // CONTACT
 // =====================================================================
 function Contact() {
+  const email = "reetigandhi1997@gmail.com";
+  const [copied, setCopied] = useState(false);
+  const copyEmail = (e) => {
+    e.preventDefault();
+    const done = () => { setCopied(true); setTimeout(() => setCopied(false), 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(done).catch(done);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = email;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (err) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  };
   return (
     <section className="contact" id="contact">
       {/* Floating scenery */}
@@ -668,8 +676,8 @@ function Contact() {
             something <span className="ribbon">COOL</span>
           </h2>
           <div>
-            <a className="contact-mail" href="mailto:reetigandhi1997@gmail.com">
-              reetigandhi1997@gmail.com ↗
+            <a className="contact-mail" href={`mailto:${email}`} onClick={copyEmail}>
+              {copied ? "Copied! ✓" : `${email} ⧉`}
             </a>
           </div>
 
@@ -679,11 +687,6 @@ function Contact() {
           </div>
         </div>
 
-        <div className="foot">
-          <span>© 2026 Reeti Gandhi · Hand-rolled in Gurugram</span>
-          <span>v4.0 · GROOVY edition</span>
-          <span>built with too much chai ☕</span>
-        </div>
       </div>
     </section>
   );
