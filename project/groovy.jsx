@@ -223,6 +223,8 @@ function Projects({ cursor }) {
         { t: "Design System", c: "green" },
       ],
       art: <CoverDisha />,
+      image: "uploads/disha-cover.png",
+      imageBg: "#FAECD8",
       link: "https://www.behance.net/gallery/235793031/Disha-AI-Health-Coach",
     },
     {
@@ -244,6 +246,8 @@ function Projects({ cursor }) {
         { t: "Wayfinding", c: "cyan" },
       ],
       art: <CoverMuseum />,
+      image: "uploads/gatishakti-cover.png",
+      imageBg: "#F4E1CA",
       link: "https://www.behance.net/gallery/235756769/Interactive-Installation-Designs",
     },
   ];
@@ -265,10 +269,10 @@ function Projects({ cursor }) {
           {projects.map((p, i) => (
             <Reveal key={i} delay={i * 80}>
               <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}><article className="proj">
-                <div className={`proj-cover ${p.cover}`}>
+                <div className={`proj-cover ${p.cover}${p.image ? " has-img" : ""}`} style={p.imageBg ? { "--img-bg": p.imageBg } : undefined}>
                   <span className="proj-num">{p.num}</span>
                   <span className="proj-ribbon">{p.ribbon}</span>
-                  {p.art}
+                  {p.image ? <img className="proj-img" src={p.image} alt={p.title} /> : p.art}
                 </div>
                 <div className="proj-body">
                   <div className="proj-tag">{p.tag}</div>
